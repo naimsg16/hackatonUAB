@@ -1,5 +1,5 @@
 def check_comment (token):
-    if( '#' in token):
+    if(vars()):
         content = token.split('#')
         code = content[0]
         comment = content[1]
