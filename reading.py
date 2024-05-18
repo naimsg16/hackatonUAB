@@ -1,12 +1,12 @@
 from variable_seeker import find_variables
 import re
 def process_line (token):
-    if "import" in token:  
+    """ if "import" in token:  
         # Si detecta que es un import, ignora el procés
         line = token 
-    else:
+    else: """
         # En altre cas, ho tradueix
-        line = translate(token)
+    line = translate(token)
     output.write(line + '\n')
 
 
