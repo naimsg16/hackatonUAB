@@ -2,7 +2,7 @@ import re
 
 def find_variables(code_string):
     # Define the regular expression pattern for variable names
-    pattern = r'(?<![."\'\w])\b[a-zA-Z][a-zA-Z0-9_]*\b'
+    pattern = r'(?<![."\'\w])\b[\w][\w]*\b'
     
     # List of Python reserved keywords
     reserved_keywords = {
@@ -12,11 +12,11 @@ def find_variables(code_string):
         'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 
         'raise', 'return', 'try', 'while', 'with', 'yield', 'int', 'list','bool', 'str',
         'set', 'dict', 'tuple', 'float', 'self', 'sum', 'print', 'any', 'all', 'max', 'len', 
-        'min', 'sorted', 'reversed', 'enumerate', 'filter', 'map', 'zip' 
+        'min', 'sorted', 'reversed', 'enumerate', 'filter', 'map', 'zip', '__name__'
     }
 
     # Find all matches in the code string
-    matches = re.findall(pattern, code_string)
+    matches = re.findall(pattern, code_string, re.UNICODE)
     
     # Filter out reserved keywords
     variables = [word for word in matches if word not in reserved_keywords]
@@ -119,7 +119,3 @@ if __name__ == "__main__":
     main()
 
 """
-
-
-variables = find_variables(code_string)
-print("Variables found:", variables)
