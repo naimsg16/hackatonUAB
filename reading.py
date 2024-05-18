@@ -3,25 +3,24 @@ def check_comment (token):
         content = token.split('#')
         code = content[0]
         comment = content[1]
-        file2.write(f"{code}#{comment.upper()} \n")
+        output.write(f"{code}#{comment.upper()} \n")
     elif token != '':
-        file2.write(token + '\n')
+        output.write(token + '\n')
     else:
-        file2.write('\n')
-
+        output.write('\n')
 
 if __name__=="__main__":
     toggle = False         
-    with open("prova.py","r", encoding="utf-8") as file:
-        lines = file.readlines()
-    with open("output.py","a", encoding="utf-8") as file2:
-        file2.truncate(0)
+    with open("prova.py","r", encoding="utf-8") as input:
+        lines = input.readlines()
+    with open("output.py","a", encoding="utf-8") as output:
+        output.truncate(0)
         for line in lines:
             tokenized =  line.split('\n')
             if tokenized[0] == "\"\"\"":
-                file2.write("\"\"\"\n")
+                output.write("\"\"\"\n") 
                 toggle = not toggle
             elif toggle:
-                file2.write(tokenized[0].upper() + '\n')
+                output.write(tokenized[0].upper() + '\n')
             else:
                 check_comment(tokenized[0])
