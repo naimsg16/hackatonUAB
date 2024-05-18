@@ -18,7 +18,6 @@ if __name__=="__main__":
         file2.truncate(0)
         for line in lines:
             tokenized =  line.split('\n')
-            print(tokenized[0])
             check_comment(tokenized[0])
 
 
