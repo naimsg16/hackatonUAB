@@ -1,7 +1,4 @@
 import re
-
-
-# List of Python reserved keywords
 reserved_keywords = [
         'False', 'None', 'True', 'and', 'as', 'assert', 'async', 
         'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 
@@ -9,13 +6,13 @@ reserved_keywords = [
         'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 
         'raise', 'return', 'try', 'while', 'with', 'yield', 'int', 'list','bool', 'str',
         'set', 'dict', 'tuple', 'float', 'self', 'sum', 'print', 'any', 'all', 'max', 'len', 
-        'min', 'sorted', 'reversed', 'enumerate', 'filter', 'map', 'zip', '__name__', 'r'
-   ]
+        'min', 'sorted', 'reversed', 'enumerate', 'filter', 'map', 'zip', '__name__', 'open','r'
+    ]
 
 def find_variables(code_string):
     # Define the regular expression pattern for variable names
     pattern = r'(?<![."\'\w])\b[\w][\w]*\b'
-
+    
     # Find all matches in the code string
     matches = re.findall(pattern, code_string, re.UNICODE)
     
