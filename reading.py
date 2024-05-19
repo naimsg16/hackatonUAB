@@ -1,5 +1,5 @@
-from variable_seeker import find_variables
 import re
+import variable_seeker
 def process_line (token):
     """ if "import" in token:  
         # Si detecta que es un import, ignora el procés
@@ -11,7 +11,7 @@ def process_line (token):
 
 
 def translate (line):
-    variables = find_variables(line)    # Aquí guardem les variables trobades
+    variables = variable_seeker.find_variables(line)    # Aquí guardem les variables trobades
     pattern = r'\(|\)|\:|\w+|\s+|[^\w\s]'  
     words = re.findall(pattern,line)    # Fem un split i separem tots els caràcters
     translated = ""
@@ -23,7 +23,8 @@ def translate (line):
         translated += new_word          # Afegim la nova paraula
     return translated                   # Retornem la traducció
 
-if __name__=="__main__":     
+if __name__=="__main__":    
+    variable_seeker.add_keyword("re") 
     with open("prova.py","r", encoding="utf-8") as input:
         # Llegim el codi
         lines = input.readlines()
