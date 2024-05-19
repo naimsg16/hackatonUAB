@@ -56,9 +56,3 @@ if __name__=="__main__":
         for line in lines:
             tokenized =  line.split('\n')
             check_comment(tokenized[0])
-
-def translation(line):
-    
-
-
-
