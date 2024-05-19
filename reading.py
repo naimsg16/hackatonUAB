@@ -1,7 +1,6 @@
 import re
 import variable_seeker
 from deep_translator import GoogleTranslator
-from langdetect import detect
 
 languages = {
     'af': 'Afrikaans', 'ar': 'Arabic', 'bg': 'Bulgarian', 'bn': 'Bengali', 'ca': 'Catalan', 'cs': 'Czech',
@@ -14,10 +13,11 @@ languages = {
 'sq': 'Albanian', 'sv': 'Swedish', 'sw': 'Swahili', 'ta': 'Tamil', 'te': 'Telugu', 'th': 'Thai',
 'tl': 'Tagalog', 'tr': 'Turkish', 'uk': 'Ukrainian', 'ur': 'Urdu', 'vi': 'Vietnamese', 'zh-cn': 'Chinese (Simplified)',
 'zh-tw': 'Chinese (Traditional)'
-
 }
 
 language_names = {v.lower(): k for k, v in languages.items()}           # Crear un diccionario inverso para buscar por nombre de idioma
+
+libraries = input("insert all the libraries that you use in the program separeted with \",\"").split(",")
 
 print("Enter the name of the language you want for the translation:")   # Pedir al usuario que ingrese el nombre del idioma deseado
 input_language = input().strip().lower()
@@ -43,6 +43,16 @@ def translate (line):
     variables = variable_seeker.find_variables(line)    # Aquí guardem les variables trobades
     pattern = r'\(|\)|\:|\w+|\s+|[^\w\s]'  
     words = re.findall(pattern,line)    # Fem un split i separem tots els caràcters
+    """ 
+    words_filtered = []
+    for word in words:
+        if word in variables:
+            words_filtered.append(word)
+    # Codi de damunt equivalent a línia de baix
+    words_filtered = [word for word in words if word in variables]
+
+    word_str = ' '.join(words_filtered)
+    return traductor.translate(word_str) """
     translated = ""
     for word in words:                  # Per cada paraula del split:
         if word in variables:           
@@ -53,7 +63,10 @@ def translate (line):
     return translated                   # Retornem la traducció
 
 if __name__=="__main__":    
-    variable_seeker.add_keyword("re") 
+
+    for library in libraries:
+        variable_seeker.add_keyword(library) 
+
     with open("prova.py","r", encoding="utf-8") as input:
         # Llegim el codi
         lines = input.readlines()

@@ -9,7 +9,7 @@ reserved_keywords = [
         'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 
         'raise', 'return', 'try', 'while', 'with', 'yield', 'int', 'list','bool', 'str',
         'set', 'dict', 'tuple', 'float', 'self', 'sum', 'print', 'any', 'all', 'max', 'len', 
-        'min', 'sorted', 'reversed', 'enumerate', 'filter', 'map', 'zip', '__name__'
+        'min', 'sorted', 'reversed', 'enumerate', 'filter', 'map', 'zip', '__name__', 'r'
    ]
 
 def find_variables(code_string):
