@@ -8,7 +8,7 @@ pip install translator-uabthehack
 ### Running it on your code
 Import the main method by using :
 ```
-from translate_uabthehack.main import translate_code
+from translator_uabthehack.main import translate_code
 ```
 And then run the method:
 ```
