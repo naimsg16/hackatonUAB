@@ -37,10 +37,7 @@ def translate (line, traductor):
         translated += new_word          # Afegim la nova paraula
     return translated                   # Retornem la traducció
 
-def main():
-    input_file = sys.argv[1]
-    trans_language=sys.argv[2]
-    output_file = sys.argv[3]
+def translate_code(input_file, trans_language, output_file):
 
 
     languages = {
@@ -90,4 +87,4 @@ def main():
                     process_line(text, toggle, traductor, output)
 
 if __name__=="__main__":    
-    main()
+    translate_code(sys.argv[1],sys.argv[2], sys.argv[3])
