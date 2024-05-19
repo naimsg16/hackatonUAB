@@ -77,5 +77,5 @@ Where:
 - Chinese (Traditional)
 ### Errors
 There are some sequences that can't be translated and / or interpreted by our translator, so follow these steps:
-- Don't use the symbol "#" inside comments
+- Don't use the symbol "#" outside of the comment marker
 - Don't use the word "import" in your code (it should be fine in the comments)
