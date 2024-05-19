@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "translator-uabthehack"
+version = "0.1.0"
+description = ""
+authors = ["Oriol Agost Batalla <gpg18@agost.info>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+deep-translator = "^1.11.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
