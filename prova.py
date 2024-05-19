@@ -1,8 +1,7 @@
 from variable_seeker import find_variables
 import re
 def process_line (token):
-    if "hola" in token:  
-        # Si detecta que es un import, ignora el procés
+    if "hola" in token:  # Si detecta que es un impurt, ignora el procés
         line = token 
     else:
         # En altre cas, ho tradueix
