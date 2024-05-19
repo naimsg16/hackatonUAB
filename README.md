@@ -12,7 +12,7 @@ from translate_uabthehack.main import translate_code
 ```
 And then run the method:
 ```
-translate_code(input_file,language,output_file)
+translate_code("input_file","language","output_file")
 ```
 Where:
 - ```input_file``` the name of the file that has to be translated (_i.e. myproject.py_)
