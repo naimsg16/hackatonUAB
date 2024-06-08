@@ -16,8 +16,8 @@ translate_code("input_file","language","output_file")
 ```
 Where:
 - ```input_file``` the name of the file that has to be translated (_i.e. myproject.py_)
-- ``` language``` the name of the language (in english) to which the program has to translate (see list down below)
-* ``` output_file``` the name of the file where the translated code will be stored (if it doesn't exist it will create it)
+- ```language``` the name of the language (in english) to which the program has to translate (see list down below)
+* ```output_file``` the name of the file where the translated code will be stored (if it doesn't exist it will create it)
 
 ### List of languages
 - Afrikaans
